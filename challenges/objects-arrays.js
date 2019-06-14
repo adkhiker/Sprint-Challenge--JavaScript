@@ -6,7 +6,8 @@
   object name, diet, weight, length, period
 */
 
-// tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceous
+//Done---
+
 const tyrannosaurus = {
   name: "tyrannosaurus",
   diet: "carnivorous",
@@ -27,7 +28,7 @@ const stegosaurus = {
   period: "Late Jurassic"
 };
 
-// velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceous
+// velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceious
 const velociraptor = {
   name: "velociraptor",
   diet: "carnivorous",
@@ -55,7 +56,7 @@ console.log(tyrannosaurus.roar());
 
 // ==== Arrays ====
 
-// Given an array of college graduates.  Complete the following requests using any array method you like
+// Given an array of college graduates.  Complete the following requests WITHOUT using any array methods like .forEach(), .map(), .reduce(), .filter()
 
 const graduates = [
   {
@@ -121,14 +122,14 @@ const graduates = [
   }
 ];
 
-/* Request 1: Create a new array called universities that contains all the universities in the graduates array.  
+/* Request 1: Create a new array called universities that contains all the univeristies in the graduates array.  
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
 for (let i = 0; i < graduates.length; i++) {
   universities.push(graduates[i]["university"]);
 }
-console.log(universities);
+console.log(universities.sort());
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
@@ -223,6 +224,7 @@ zooAnimals = [
 The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
+
 const animalNames = [];
 zooAnimals.forEach(function(animal) {
   animalNames.push(
@@ -236,6 +238,7 @@ console.log(animalNames);
 The zoos need a list of all their animal's names (names only, not scientific) converted to lower case.  Create a new array named lowerCase and map over each name to convert them all to lower case.  Log the resut.
 
 */
+
 const lowerCase = [];
 zooAnimals.map(function(lower) {
   lowerCase.push(lower.animal_name.toLowerCase());
@@ -248,8 +251,10 @@ The zoos are concenred about animals with a lower population count. Find out whi
 
 */
 const lowerPopulation = [];
-zooAnimals.map(function(lower) {
-  lowerCase.push(lower.animal_name.toLowerCase());
+zooAnimals.filter(function(ani) {
+  if (ani.population < 5) {
+    lowerPopulation.push(ani);
+  }
 });
 console.log(lowerPopulation);
 
